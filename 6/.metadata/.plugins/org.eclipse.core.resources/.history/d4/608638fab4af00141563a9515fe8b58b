@@ -1,0 +1,23 @@
+
+public class Dalek2 extends Dalek1 {
+	
+	private String[] sayings;
+	
+	public Dalek2()	{
+	}
+	
+	public void setSayings(String[] s)	{
+		sayings = new String[s.length];
+		for (int i = 0; i < s.length; i++)	{
+			sayings[i] = s[i];
+		}
+	}
+	
+	public void speak()	{
+		String saying_random;
+		int random = (int) (Math.random() * (sayings.length));
+		saying_random = sayings[random];
+		System.out.println(saying_random);
+	}
+
+}

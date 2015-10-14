@@ -1,0 +1,6 @@
+public class OneA {
+
+    public static double geometricMean(int[] nums) {
+        // ADD CODE HERE
+    }
+}

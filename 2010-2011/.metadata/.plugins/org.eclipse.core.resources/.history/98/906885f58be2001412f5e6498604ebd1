@@ -1,0 +1,25 @@
+public class OneB {
+ 
+     public static double[] movingAvg(double[] data, int len) {
+         int N = data.length - len;
+         double[] avg = new double[N+1];
+         for (int i = 0; i <= N; i++)	{
+        	 double sum = 0;
+        	 for (int e = i; e < len + i; e++)	{
+        		 sum = sum + data[e];
+        	 }
+        	 sum = sum / len;
+        	 avg[i] = sum;
+         }
+         return avg;
+     }
+     
+     public static void main(String[] args)	{
+    	 double[] d1 = {11,12,13,14,15,16,17};
+    	 double[] d2 = {3,3,6,2,8,9};
+    	 double[] d3 = {22.27,22.19,22.08,22.17,22.18,22.13,22.23,22.43};
+    	 System.out.println(movingAvg(d1, 5));
+    	 System.out.println(movingAvg(d2, 3));
+    	 System.out.println(movingAvg(d3, 5));
+     }
+ }

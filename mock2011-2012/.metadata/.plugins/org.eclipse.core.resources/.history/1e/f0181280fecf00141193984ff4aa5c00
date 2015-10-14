@@ -1,0 +1,6 @@
+public class OneB {
+  
+    public static int longestSeq(int[] nums, int n) {
+        // ADD CODE HERE
+    }
+}

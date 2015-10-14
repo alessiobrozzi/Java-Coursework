@@ -1,0 +1,46 @@
+
+import java.util.Arrays;
+
+public class TempMedian {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		if( args.length < 1)	{
+			System.out.println("fjfj");
+			return;
+		}
+		
+		int[] temps = new int[args.length];
+		int n = args.length;
+		
+		for (int i = 0; i < n; i++)	{
+			temps[i] = Integer.parseInt(args[i]);
+			System.out.print(temps[i] + " ");
+		}
+		System.out.println();
+		
+		Arrays.sort(temps);
+		
+		for (int i = 0; i < n; i++)		{
+			System.out.print(temps[i]);
+		}
+		System.out.println();
+		
+		double median = 0;
+		
+		if (n % 2 == 0)	{
+			median = (temps[n / 2] + temps[n/2 + 1]) / 2;
+		}
+		else 	{
+			median = temps[(n + 1) / 2];
+		}
+		
+		System.out.println(median);
+
+	}
+
+}

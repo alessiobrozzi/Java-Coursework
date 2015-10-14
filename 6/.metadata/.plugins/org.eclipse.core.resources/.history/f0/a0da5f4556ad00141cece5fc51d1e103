@@ -1,0 +1,22 @@
+
+public class Favourites 	{
+	
+	private MusicTrack[] tracks = new MusicTrack[5];
+	private int keep_count = 0;
+	
+	public Favourites()	{
+	}
+	
+	public void addTrack(MusicTrack track)	{
+		tracks[keep_count] = track;
+		keep_count++;
+	}
+	
+	public void showFavourites()	{
+		for (int i = 0; i < keep_count; i++)	{
+			String spec_track = tracks[i].toString();
+			System.out.println(spec_track);
+		}
+	}
+
+}

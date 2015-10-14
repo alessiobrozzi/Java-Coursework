@@ -1,0 +1,84 @@
+public class ArrayOps {
+	
+	public static double[] data;
+
+    public static double findMax(double[] data) {
+        data = new double[data.length];
+        if (data.length == 0)	{
+        	return 0;
+        }
+        else if (data.length == 1)	{
+        	return data[0];
+        }
+        else {
+        	double max = data[0];
+        	for (int i = 0; i < (data.length - 1); i++)	{
+        		if (data[i] > data[i + 1])	{
+        			max = data[i];
+        		}
+        		else {
+        			max = data[i + 1];
+        		}
+        	}
+        	return max;
+        }
+    }
+
+    public static double[] normalise(double data[]) {
+        data = new double[data.length];
+        double[] newA = new double[data.length];
+        double sum = 0;
+        for (int i = 0; i < data.length; i++)	{
+        	sum = sum + data[i];
+        }
+        for (int i = 0; i < data.length; i++)	{
+        	newA[i] = (data[i]) / sum;
+        }
+        return newA;
+    }
+
+    public static void normaliseInPlace(double data[]) {
+    	data = new double[data.length];
+        double sum = 0;
+        for (int i = 0; i < data.length; i++)	{
+        	sum += data[i];
+        }
+        for (int i = 0; i < data.length; i++)	{
+        	data[i] = data[i] / sum;
+        }
+    }
+
+    public static double[] reverse(double[] data) {
+        int l = data.length;
+        data = new double[data.length];
+        double[] newA = new double[data.length];
+        for (int i = 0; i < l/2; i++)	{
+        	newA[l - i] = data[i];
+        	newA[i] = data[i - 1];
+        }
+        return newA;
+    }
+
+    public static void reverseInPlace(double[] data) {
+    	int l = data.length;
+        data = new double[data.length];
+        double temp;
+        for (int i = 0; i < l/2; i++)	{
+        	temp = data[i - 1];
+        	data[i - 1] = data[i];
+        	data[i] = temp;
+        }
+    }
+
+    public static void swap(double[] data1, double[] data2) {
+        data1 = new double[data1.length];
+        data2 = new double[data1.length];
+        double temp = 0;
+        for (int i = 0; i < data1.length; i++)	{
+        	temp = data1[i];
+        	data1[i] = data2[i];
+        	data2[i] = temp;
+        }
+    }
+
+}

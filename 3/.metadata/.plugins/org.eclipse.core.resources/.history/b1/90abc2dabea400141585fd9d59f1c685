@@ -1,0 +1,47 @@
+
+public class Mode {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] dataset = new int[args.length];
+		int[] count = new int[10];
+		
+		for (int i = 0; i < args.length; i++)	{
+			count[i] = 0;
+		}
+		
+		for (int i = 0; i < args.length; i++)	{
+			for (int e = 0; e < 10; e++)	{
+				if (dataset[i] == e)	{
+					count[e]++;
+				}
+			}
+			
+			System.out.print("[" + i + "s: " + count[i] + "] ");
+			
+			for (int points = 1; points <= count[i]; points++)	{
+				System.out.print(".");
+			}
+			
+			System.out.println();
+		}
+		
+		int max = 0;
+		for (int i = 0; i < 9; i++)	{
+			if (count[i] > count[i + 1])	{
+				max = i;
+			}
+			else {
+				max = i + 1;
+			}
+		}
+			
+		System.out.println("Mode: " + max);
+
+	}
+
+}

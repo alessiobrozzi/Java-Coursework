@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+
+public class OneB {
+
+    public static double meanColSums(int[][] matrix) {
+        ArrayList<Double> sums = new ArrayList<Double>();
+        
+        for (int[] i : matrix)	{
+        	double sum = 0;
+        	for (int e : i)	{
+        		sum = sum + e;
+        	}
+        	sums.add(sum);
+        }
+        double mean = 0;
+        for (Double i : sums)	{
+        	mean = mean + i;
+        }
+        return mean / sums.size();
+        
+    }
+    
+    public static void main(String[] args){
+    	int[][] m1 = {{12,1},{2,5},{8,1}};
+    	int[][] m2 = {{12,1,14},{2,5,5},{8,1,2}};
+    	int[][] m3 = {{1,0,0,0,0}};
+    	int[][] m4 = {{0}};
+    	System.out.println(meanColSums(m1));
+    	System.out.println(meanColSums(m2));
+    	System.out.println(meanColSums(m3));
+    	System.out.println(meanColSums(m4));
+    }
+}

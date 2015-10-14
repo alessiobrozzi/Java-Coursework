@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class OneC {
+
+    public static ArrayList<String> findSubstrings(String s, int len) {
+        // ADD CODE HERE
+    }
+
+    public static void increment(HashMap<String, Integer> map, String s) {
+        // ADD CODE HERE
+    }
+    
+    public static HashMap<String, Integer> findStringCounts(String s) {
+        // ADD CODE HERE 
+    }
+    
+}

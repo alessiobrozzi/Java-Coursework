@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
+public class Molecule {
+	
+	HashMap<Element, Integer> structure = new HashMap<Element, Integer>();
+	Table table = new Table();
+	
+	public Molecule() {
+		
+	}
+	
+	public void addAtom(String sym, int num)	{
+		Element element = table.lookup(sym);
+		structure.put(element, num);
+	}
+	public void addAtom(String sym){
+		Element element = table.lookup(sym);
+		structure.put(element, 1);
+	}
+	public ArrayList<Element> atoms()	{
+		return (ArrayList<Element>) structure.keySet();
+	}
+	public double weigth()	{
+		double tw = 0;
+		ArrayList<Element> els = (ArrayList<Element>) structure.keySet();
+		for (Element i : els)	{
+			double w = i.getWeight();
+			Integer n = structure.get(i);
+			tw = tw + w * n;
+		}
+		return tw;
+	}
+
+}

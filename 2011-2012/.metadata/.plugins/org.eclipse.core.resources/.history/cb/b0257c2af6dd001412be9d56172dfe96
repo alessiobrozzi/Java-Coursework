@@ -1,0 +1,49 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class OneC {
+
+    public static int hammingDist(String left, String right) {
+        int dist = 0;
+        for (int i = 0; i < left.length(); i++)	{
+        	if (left.charAt(i) != right.charAt(i)){
+        		dist++;
+        	}
+        }
+        return dist;
+    }
+
+    public static String findFarthest(String s, String[] targets) {
+        int index = 0;
+        int distMax = 0;
+        for (int i =  0; i < targets.length; i++){
+        	int dist = hammingDist(s, targets[i]);
+        	if (dist > distMax){
+        		distMax = dist;
+        		index = i;
+        	}
+        }
+        return targets[index];
+    }
+
+    public static ArrayList<String> findNearestK(String s, String[] targets,
+            int k) {
+        // ADD CODE HERE
+    }
+
+    public static int stringDist(String left, String right) {
+        // ADD CODE HERE
+    }
+    
+    public static void main(String[] args){
+    	System.out.print(hammingDist("abaca", "abaca") + " ");
+    	System.out.print(hammingDist("abaca", "aback") + " ");
+    	System.out.print(hammingDist("abaca", "abaft") + " ");
+    	System.out.print(hammingDist("abaca", "adapt") + " ");
+    	System.out.print(hammingDist("abaca", "accoy") + " ");
+    	System.out.print(hammingDist("abaca", "actor") + " ");
+    	String[] targets = {"abaca", "aback", "abaft", "adapt", "accoy", "actor"};
+    	System.out.print(findFarthest("abaca", targets) + " ");
+    }
+
+}

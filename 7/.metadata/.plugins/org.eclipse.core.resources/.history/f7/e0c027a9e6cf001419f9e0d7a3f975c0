@@ -1,0 +1,14 @@
+import java.util.Arrays;
+
+
+public class Tokenizer {
+	
+	public Tokenizer()	{
+		// do nothing
+	}
+	
+	public void tokenize(String str)	{
+		
+	}
+	
+}

@@ -1,0 +1,65 @@
+
+public class DNAStrand {
+	
+	private String dna;
+	
+	public DNAStrand(String dna)	{
+		this.dna = dna;
+	}
+
+	public boolean isValidDNA()	{
+		boolean check = true;
+		for (int i = 0; i < dna.length(); i++)	{
+			char a = dna.charAt(i);
+			check = check && (a == 'A' || a == 'T' || a == 'C' || a == 'G');
+		}
+		return check && (dna.length() != 0);
+	}
+	public String complementWC()	{
+		String dna_c = "";
+		char[] dnac = new char[dna.length()];
+		if (isValidDNA())	{
+			for (int i = 0; i < dna.length(); i++)	{
+				if (dna.charAt(i) == 'A')	{
+					dnac[i] = 'T';
+				}
+				else if (dna.charAt(i) == 'T')	{
+					dnac[i] = 'A';
+				}
+				else if (dna.charAt(i) == 'G')	{
+					dnac[i] = 'C';
+				}
+				else if (dna.charAt(i) == 'C')	{
+					dnac[i] = 'G';
+				}
+				dna_c = dna_c + dnac[i];
+			}
+			return dna_c;
+		}
+		else {
+			return "Not valid DNA";
+		}
+	}
+	public String palindromeWC()	{
+		String dna_c = complementWC();
+		String pal = "";
+		char[] pals = new char[dna_c.length()];
+		for (int i = 0; i < dna_c.length(); i++)	{
+			pals[i] = dna_c.charAt(dna_c.length() - i - 1);
+			pal = pal + pals[i];
+		}
+		return pal;
+	}
+	public boolean containsSequence(String seq)	{
+		String dna_c = complementWC();
+		String pal = palindromeWC();
+		boolean a = dna.contains(seq);
+		boolean b = dna_c.contains(seq);
+		boolean c = pal.contains(seq);
+		return a;
+	}
+	public String toString()	{
+		return dna;
+	}
+
+}

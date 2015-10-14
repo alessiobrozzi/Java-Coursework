@@ -1,0 +1,30 @@
+
+public class Sieve {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int n = 20;
+		// int n = Integer.parseInt(args[0]);
+		
+		int[] set = new int[n-1];
+		
+		for (int p = 2; p <= n; p++)		{
+			if (set[p-2] != 0)		{
+				System.out.print(set[p-2] + " ");
+				for (int i = 1; p + i <= 20; i++)	{
+					if (set[p-2+i] % set[p-2] == 0)	{
+						set[p-2+i] = 0;
+					}
+				}
+			}
+
+		}
+		System.out.println();
+
+	}
+
+}

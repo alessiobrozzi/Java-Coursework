@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+ 
+ public class OneC {
+ 
+     public static String[] getDomainLabels(String url) {
+         int nPos = (url.lastIndexOf('/', 0);
+    	 String sub = url.substring(0, (url.lastIndexOf('/', 0)));
+         String[] splits = sub.split("\\.");
+         return splits;
+     }
+ 
+     public static void reverseArray(String[] labels) {
+         // ADD CODE HERE
+     }
+ 
+     public static String arrayToString(String[] labels) {
+         // ADD CODE HERE
+     }
+ 
+     public static ArrayList<String> textToReversedDomains(String filename) {
+         // ADD CODE HERE
+     }
+     
+     public static void main(String[] args)	{
+    	 String[] splits = getDomainLabels("www.GROUPON.co.uk/Edinburgh+Coupons");
+    	 for (String i : splits)	{
+    		 System.out.println(i);
+    	 }
+     }
+ 
+ }

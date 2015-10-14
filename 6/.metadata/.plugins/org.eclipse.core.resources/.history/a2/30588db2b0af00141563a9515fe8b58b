@@ -1,0 +1,8 @@
+
+public class ImageEditor1 {
+	
+	public static double luminance(Color color)	{
+		
+	}
+
+}
